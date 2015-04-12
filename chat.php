@@ -1,6 +1,6 @@
 <?php
 
-    $function = $_POST['function'];
+    $function = $_POST['func'];
     
     $log = array();
     

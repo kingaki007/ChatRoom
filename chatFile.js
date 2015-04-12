@@ -6,18 +6,18 @@ var file;
 function Chat () {
     this.update = updateChat;
     this.send = sendChat;
-	this.getState = getStateOfChat;
+	this.getState = getStateChat;
 }
 
 //gets the state of the chat
-function getStateOfChat(){
+function getStateChat(){
 	if(!instance){
 		 instance = true;
 		 $.ajax({
 			   type: "POST",
 			   url: "chat.php",
 			   data: {  
-			   			'function': 'getState',
+			   			'func': 'getState',
 						'file': file
 						},
 			   dataType: "json",
@@ -38,7 +38,7 @@ function updateChat(){
 			   type: "POST",
 			   url: "chat.php",
 			   data: {  
-			   			'function': 'update',
+			   			'func': 'update',
 						'state': state,
 						'file': file
 						},
@@ -68,7 +68,7 @@ function sendChat(message, nickname)
 		   type: "POST",
 		   url: "chat.php",
 		   data: {  
-		   			'function': 'send',
+		   			'func': 'send',
 					'message': message,
 					'nickname': nickname,
 					'file': file
